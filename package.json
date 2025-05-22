@@ -13,7 +13,8 @@
 		"db:fresh": "cross-env NODE_OPTIONS=--no-deprecation payload migrate:fresh",
 		"lint": "cross-env NODE_OPTIONS=--no-deprecation next lint",
 		"payload": "cross-env NODE_OPTIONS=--no-deprecation payload",
-		"start": "cross-env NODE_OPTIONS=--no-deprecation next start"
+		"start": "cross-env NODE_OPTIONS=--no-deprecation next start",
+		"db:seed": "npx tsx src/seed.ts"
 	},
 	"dependencies": {
 		"@hookform/resolvers": "^5.0.1",
@@ -52,6 +53,7 @@
 		"cmdk": "^1.1.1",
 		"cross-env": "^7.0.3",
 		"date-fns": "^4.1.0",
+		"dotenv": "^16.5.0",
 		"embla-carousel-react": "^8.6.0",
 		"graphql": "^16.8.1",
 		"input-otp": "^1.4.2",

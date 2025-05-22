@@ -2,6 +2,7 @@
 import { mongooseAdapter } from '@payloadcms/db-mongodb';
 import { payloadCloudPlugin } from '@payloadcms/payload-cloud';
 import { lexicalEditor } from '@payloadcms/richtext-lexical';
+import dotenv from 'dotenv';
 import path from 'path';
 import { buildConfig } from 'payload';
 import sharp from 'sharp';
@@ -10,6 +11,8 @@ import { fileURLToPath } from 'url';
 import { Categories } from './collections/Categories';
 import { Media } from './collections/Media';
 import { Users } from './collections/Users';
+
+dotenv.config({ path: '.env' });
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
