@@ -1,16 +1,18 @@
 Developer @Aldiyes
 
-# 08 Authentication
+# 09 Auth States
 
-- Modify "Users" collection
+- Alternative ways to persist logged in state
 
-  - Add "username" field
+  - Manually using "next/headers"
 
-- Create auth procedures
+    - use "payload.config.cookiePrefix"
 
-  - Use Payload auth utils
+  - Using Payload "REST API"
 
-- Create auth screens
+    - automatically set cookie on login
 
-  - Login view
-  - Legister view
+- Use authenticated states
+
+  - Display "dashboard" button when logged in
+  - Display "Library" button when logged in
