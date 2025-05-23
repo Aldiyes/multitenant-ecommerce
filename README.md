@@ -1,16 +1,16 @@
 Developer @Aldiyes
 
-# 07 tRPC Integration
+# 08 Authentication
 
-- Setup tRPC
+- Modify "Users" collection
 
-  - basic router
-  - client-side fetcher
-  - server-side fetcher
-  - explore new syntax
+  - Add "username" field
 
-- Add "categoriesRouter"
+- Create auth procedures
 
-  - prefetch categories in "layout.tsx"
-  - client-side fetch categories in "categories-sidebar.tsx"
-  - infer tRPC types
+  - Use Payload auth utils
+
+- Create auth screens
+
+  - Login view
+  - Legister view
