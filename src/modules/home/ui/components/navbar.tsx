@@ -11,10 +11,9 @@ import { cn } from '@/lib/utils';
 import { useTRPC } from '@/trpc/client';
 import { useQuery } from '@tanstack/react-query';
 
-
 import { Button } from '@/components/ui/button';
 
-import { NavbarSidebar } from './navbar-sidebar';
+import { NavbarSidebar } from '@/modules/home/ui/components/navbar-sidebar';
 
 const poppins = Poppins({
 	subsets: ['latin'],

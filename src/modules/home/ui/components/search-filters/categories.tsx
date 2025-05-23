@@ -1,22 +1,23 @@
 'use client';
 
 import { ListFilterIcon } from 'lucide-react';
+import { useParams } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 
 import { cn } from '@/lib/utils';
 
-import { CategoriesGetManyOutput } from '@/modules/categories/types';
-
 import { Button } from '@/components/ui/button';
 
-import { CategoriesSidebar } from './categories-sidebar';
-import { CategoryDropdown } from './category-dropdown';
+import { CategoriesGetManyOutput } from '@/modules/categories/types';
+import { CategoriesSidebar } from '@/modules/home/ui/components/search-filters/categories-sidebar';
+import { CategoryDropdown } from '@/modules/home/ui/components/search-filters/category-dropdown';
 
 type Props = {
 	data: CategoriesGetManyOutput;
 };
 
 export const Categories = ({ data }: Props) => {
+	const params = useParams();
 	const containerRef = useRef<HTMLDivElement>(null);
 	const measureRef = useRef<HTMLDivElement>(null);
 	const viewAllRef = useRef<HTMLDivElement>(null);
@@ -25,7 +26,8 @@ export const Categories = ({ data }: Props) => {
 	const [isAnyHovered, setIsAnyHovered] = useState(false);
 	const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-	const activeCategory = 'all';
+	const categoryParam = params.category as string | undefined;
+	const activeCategory = categoryParam || 'all';
 
 	const activeCategoryIndex = data.findIndex(
 		(cat) => cat.slug === activeCategory
@@ -105,6 +107,7 @@ export const Categories = ({ data }: Props) => {
 
 				<div ref={viewAllRef} className="shrink-0">
 					<Button
+						variant="elevated"
 						onClick={() => setIsSidebarOpen(true)}
 						className={cn(
 							'h-11 px-4 bg-transparent border-transparent rounded-full hover:bg-white hover:border-primary text-black',

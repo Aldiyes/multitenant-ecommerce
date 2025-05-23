@@ -1,18 +1,10 @@
 Developer @Aldiyes
 
-# 09 Auth States
+# 10 Category Pages
 
-- Alternative ways to persist logged in state
+- Implement a category & subcategory routing
 
-  - Manually using "next/headers"
+  - Show current main category style
+  - Show breadcrumbs
 
-    - use "payload.config.cookiePrefix"
-
-  - Using Payload "REST API"
-
-    - automatically set cookie on login
-
-- Use authenticated states
-
-  - Display "dashboard" button when logged in
-  - Display "Library" button when logged in
+- Refactor components to their modules

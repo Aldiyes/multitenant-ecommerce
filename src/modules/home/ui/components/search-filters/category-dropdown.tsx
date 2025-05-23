@@ -9,8 +9,8 @@ import { Button } from '@/components/ui/button';
 
 import { CategoriesGetManyOutput } from '@/modules/categories/types';
 
-import { SubcategoryMenu } from './subcategory-menu';
-import { useDropdownPosition } from './use-dropdown-position';
+import { SubcategoryMenu } from '@/modules/home/ui/components/search-filters/subcategory-menu';
+import { useDropdownPosition } from '@/modules/home/ui/components/search-filters/use-dropdown-position';
 
 type Props = {
 	category: CategoriesGetManyOutput[1];
