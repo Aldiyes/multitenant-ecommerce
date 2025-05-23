@@ -5,14 +5,15 @@ import { useEffect, useRef, useState } from 'react';
 
 import { cn } from '@/lib/utils';
 
+import { CategoriesGetManyOutput } from '@/modules/categories/types';
+
 import { Button } from '@/components/ui/button';
 
-import { CustomCategory } from '../types';
 import { CategoriesSidebar } from './categories-sidebar';
 import { CategoryDropdown } from './category-dropdown';
 
 type Props = {
-	data: CustomCategory[];
+	data: CategoriesGetManyOutput;
 };
 
 export const Categories = ({ data }: Props) => {
@@ -67,7 +68,6 @@ export const Categories = ({ data }: Props) => {
 			<CategoriesSidebar
 				open={isSidebarOpen}
 				onOpenChangeAction={setIsSidebarOpen}
-				data={data}
 			/>
 			{/* hidden div to measure all items */}
 			<div

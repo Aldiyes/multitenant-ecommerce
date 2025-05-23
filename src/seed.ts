@@ -1,5 +1,3 @@
-import dotenv from 'dotenv';
-
 import { getPayload } from 'payload';
 
 import config from '@payload-config';
