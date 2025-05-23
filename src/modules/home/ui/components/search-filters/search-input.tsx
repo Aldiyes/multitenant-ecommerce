@@ -11,7 +11,7 @@ import { useQuery } from '@tanstack/react-query';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
-import { CategoriesSidebar } from './categories-sidebar';
+import { CategoriesSidebar } from '@/modules/home/ui/components/search-filters/categories-sidebar';
 
 type Props = {
 	disabled?: boolean;

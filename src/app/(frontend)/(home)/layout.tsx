@@ -4,9 +4,12 @@ import { ErrorBoundary } from 'react-error-boundary';
 import { getQueryClient, trpc } from '@/trpc/server';
 import { dehydrate, HydrationBoundary } from '@tanstack/react-query';
 
-import { Footer } from './footer';
-import { Navbar } from './navbar';
-import { SearchFilters, SearchFiltersSkeleton } from './search-filters';
+import { Footer } from '@/modules/home/ui/components/footer';
+import { Navbar } from '@/modules/home/ui/components/navbar';
+import {
+	SearchFilters,
+	SearchFiltersSkeleton,
+} from '@/modules/home/ui/components/search-filters';
 
 export default async function RootHomeLayout({
 	children,
