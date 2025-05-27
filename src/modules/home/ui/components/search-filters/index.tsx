@@ -5,7 +5,7 @@ import { useParams } from 'next/navigation';
 import { useTRPC } from '@/trpc/client';
 import { useSuspenseQuery } from '@tanstack/react-query';
 
-import { DEFAULT_BG_COLOR } from '@/modules/home/constants';
+import { DEFAULT_BG_COLOR } from '@/constants';
 import { BreadcrumbNavigation } from '@/modules/home/ui/components/search-filters/breadcrumb-navigation';
 import { Categories } from '@/modules/home/ui/components/search-filters/categories';
 import { SearchInput } from '@/modules/home/ui/components/search-filters/search-input';

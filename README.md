@@ -1,10 +1,16 @@
 Developer @Aldiyes
 
-# 12 Filtering Products
+# 13 API Filters & Sorting
 
-- Improve TypeScript strictness
-  - Resolve TS errors
+- Connect filters to API
 
-- Add basic product filtering
-  - Introduction to NUQS
-  - "product-filters.tsx" component
+- Add "Tags collection
+
+  - Add "tags" relation to "Products"
+  - Create tags procedures
+
+    - Add infinite load
+
+- Add sorting UI
+
+- Connect sorting to API
