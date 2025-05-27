@@ -11,6 +11,7 @@ import { lexicalEditor } from '@payloadcms/richtext-lexical';
 import { Categories } from './collections/Categories';
 import { Media } from './collections/Media';
 import { Products } from './collections/Products';
+import { Tags } from './collections/Tags';
 import { Users } from './collections/Users';
 
 dotenv.config({ path: '.env' });
@@ -25,7 +26,7 @@ export default buildConfig({
 			baseDir: path.resolve(dirname),
 		},
 	},
-	collections: [Users, Media, Categories, Products],
+	collections: [Users, Media, Categories, Products, Tags],
 	editor: lexicalEditor(),
 	secret: process.env.PAYLOAD_SECRET || '',
 	typescript: {
