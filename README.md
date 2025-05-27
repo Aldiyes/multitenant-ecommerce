@@ -1,9 +1,10 @@
 Developer @Aldiyes
 
-# 11 Products
+# 12 Filtering Products
 
-- Add "Products" collection
-- Load products based on category
+- Improve TypeScript strictness
+  - Resolve TS errors
 
-  - Prefetch in RSC
-  - load with suspense in client component
+- Add basic product filtering
+  - Introduction to NUQS
+  - "product-filters.tsx" component
