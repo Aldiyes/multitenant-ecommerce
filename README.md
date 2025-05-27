@@ -1,10 +1,9 @@
 Developer @Aldiyes
 
-# 10 Category Pages
+# 11 Products
 
-- Implement a category & subcategory routing
+- Add "Products" collection
+- Load products based on category
 
-  - Show current main category style
-  - Show breadcrumbs
-
-- Refactor components to their modules
+  - Prefetch in RSC
+  - load with suspense in client component
