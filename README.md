@@ -1,8 +1,21 @@
 Developer @Aldiyes
 
-# 14 Product List UI
+# 15 Multi Tenancy
 
-- Create reusable "product-list-view.tsx" component
-- Create "product-card.tsx" component
-- Create loading skeleton for products UI
-- Add infinite load for products
+- Fix Bugs
+
+  - Dropdown menu position getting lost
+  - Incorrect prefetching for infinite queries
+
+- Create "Tenants" collection
+
+- Add Multi-tentant plugin
+
+- Update "User" collectin
+
+  - add "super-admin", "user" roles
+  - Add tenant field
+  - create tenant on user registration
+
+- Connect "Products" collection to tenant
+  - Each product will belong to a tenant (shop)
