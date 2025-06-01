@@ -1,16 +1,8 @@
 Developer @Aldiyes
 
-# 13 API Filters & Sorting
+# 14 Product List UI
 
-- Connect filters to API
-
-- Add "Tags collection
-
-  - Add "tags" relation to "Products"
-  - Create tags procedures
-
-    - Add infinite load
-
-- Add sorting UI
-
-- Connect sorting to API
+- Create reusable "product-list-view.tsx" component
+- Create "product-card.tsx" component
+- Create loading skeleton for products UI
+- Add infinite load for products
