@@ -1,21 +1,10 @@
 Developer @Aldiyes
 
-# 15 Multi Tenancy
+# 16 Tenant Pages
 
-- Fix Bugs
+- Load tenant (shop) information into "product-card.tsx"
 
-  - Dropdown menu position getting lost
-  - Incorrect prefetching for infinite queries
+- Add "tenantSlug" filter to product's "getMany" procedure
 
-- Create "Tenants" collection
-
-- Add Multi-tentant plugin
-
-- Update "User" collectin
-
-  - add "super-admin", "user" roles
-  - Add tenant field
-  - create tenant on user registration
-
-- Connect "Products" collection to tenant
-  - Each product will belong to a tenant (shop)
+- Create tenant (shop) page
+  - /tenants/[slug]
