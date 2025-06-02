@@ -1,10 +1,11 @@
 Developer @Aldiyes
 
-# 16 Tenant Pages
+# 17 Product Page
 
-- Load tenant (shop) information into "product-card.tsx"
+- Create "getOne" product procedure
 
-- Add "tenantSlug" filter to product's "getMany" procedure
+- Create "product-view.tsx" component
 
-- Create tenant (shop) page
-  - /tenants/[slug]
+  - /tenants/[slug]/products/[productId]
+
+- Modify "product-card.tsx" Link href
