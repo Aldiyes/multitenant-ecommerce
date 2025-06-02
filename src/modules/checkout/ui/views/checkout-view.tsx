@@ -1,0 +1,91 @@
+"use client";
+
+import { useEffect } from "react";
+import { toast } from "sonner";
+
+import { InboxIcon, LoaderIcon } from "lucide-react";
+
+import { useTRPC } from "@/trpc/client";
+import { useQuery } from "@tanstack/react-query";
+
+import { generateTenantURL } from "@/lib/utils";
+
+import { useCart } from "@/modules/checkout/hooks/use-cart";
+import { CheckoutItem } from "@/modules/checkout/ui/components/checkout-item";
+import { CheckoutSidebar } from "@/modules/checkout/ui/components/checkout-sidebar";
+
+type Props = {
+  tenantSlug: string;
+};
+
+export const CheckoutView = ({ tenantSlug }: Props) => {
+  const trpc = useTRPC();
+
+  const { productIds, clearAllCartsAction, removeProductAction } =
+    useCart(tenantSlug);
+
+  const { data, error, isLoading } = useQuery(
+    trpc.checkout.getProducts.queryOptions({
+      ids: productIds,
+    }),
+  );
+
+  useEffect(() => {
+    if (error?.data?.code === "NOT_FOUND") {
+      clearAllCartsAction();
+      toast.warning("Invalid products found, Cart cleared");
+    }
+  }, [error, clearAllCartsAction]);
+
+  if (isLoading) {
+    <div className="px-4 pt-4 lg:px-12 lg:pt-16">
+      <div className="flex w-full flex-col items-center justify-center gap-y-4 rounded-lg border border-dashed border-black bg-white p-8">
+        <LoaderIcon className="text-muted-foreground animate-spin" />
+      </div>
+      ;
+    </div>;
+  }
+
+  if (!data || data.docs.length === 0) {
+    return (
+      <div className="px-4 pt-4 lg:px-12 lg:pt-16">
+        <div className="flex w-full flex-col items-center justify-center gap-y-4 rounded-lg border border-dashed border-black bg-white p-8">
+          <InboxIcon />
+          <p className="text-base font-medium">No products found</p>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="px-4 pt-4 lg:px-12 lg:pt-16">
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-7 lg:gap-16">
+        <div className="lg:col-span-4">
+          <div className="overflow-hidden rounded-md border bg-white">
+            {data?.docs.map((product, index) => (
+              <CheckoutItem
+                key={product.id}
+                name={product.name}
+                imageUrl={product.image?.url}
+                productUrl={`${generateTenantURL(product.tenant.slug)}/products/${product.id}`}
+                tenantName={product.tenant.name}
+                tenantUrl={generateTenantURL(product.tenant.slug)}
+                isLast={index === data?.docs.length - 1}
+                price={product.price}
+                onRemoveAction={() => removeProductAction(product.id)}
+              />
+            ))}
+          </div>
+        </div>
+        <div className="lg:col-span-3">
+          <CheckoutSidebar
+            total={data?.totalPrice}
+            onCheckoutAction={() => {}}
+            isCancled={false}
+            isPending={false}
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
