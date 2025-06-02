@@ -9,6 +9,8 @@ import { payloadCloudPlugin } from '@payloadcms/payload-cloud';
 import { multiTenantPlugin } from '@payloadcms/plugin-multi-tenant';
 import { lexicalEditor } from '@payloadcms/richtext-lexical';
 
+import { Config } from './payload-types';
+
 import { Categories } from './collections/Categories';
 import { Media } from './collections/Media';
 import { Products } from './collections/Products';
@@ -40,7 +42,7 @@ export default buildConfig({
 	sharp,
 	plugins: [
 		payloadCloudPlugin(),
-		multiTenantPlugin({
+		multiTenantPlugin<Config>({
 			collections: {
 				products: {},
 			},
