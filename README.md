@@ -1,11 +1,12 @@
 Developer @Aldiyes
 
-# 17 Product Page
+# 18 Cart & Checkout
 
-- Create "getOne" product procedure
+- Implement cart functionality
 
-- Create "product-view.tsx" component
+  - Zustand global store
 
-  - /tenants/[slug]/products/[productId]
+- Modify UI in "product-view.tsx"
 
-- Modify "product-card.tsx" Link href
+  - separate "cart-button.tsx" component
+    - dynamic load without SSR to avoid hydration errors
