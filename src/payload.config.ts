@@ -1,56 +1,57 @@
-import dotenv from 'dotenv';
-import path from 'path';
-import { buildConfig } from 'payload';
-import sharp from 'sharp';
-import { fileURLToPath } from 'url';
+import dotenv from "dotenv";
+import path from "path";
+import { buildConfig } from "payload";
+import sharp from "sharp";
+import { fileURLToPath } from "url";
 
-import { mongooseAdapter } from '@payloadcms/db-mongodb';
-import { payloadCloudPlugin } from '@payloadcms/payload-cloud';
-import { multiTenantPlugin } from '@payloadcms/plugin-multi-tenant';
-import { lexicalEditor } from '@payloadcms/richtext-lexical';
+import { mongooseAdapter } from "@payloadcms/db-mongodb";
+import { payloadCloudPlugin } from "@payloadcms/payload-cloud";
+import { multiTenantPlugin } from "@payloadcms/plugin-multi-tenant";
+import { lexicalEditor } from "@payloadcms/richtext-lexical";
 
-import { Config } from './payload-types';
+import { Config } from "./payload-types";
 
-import { Categories } from './collections/Categories';
-import { Media } from './collections/Media';
-import { Products } from './collections/Products';
-import { Tags } from './collections/Tags';
-import { Tenants } from './collections/Tenants';
-import { Users } from './collections/Users';
+import { Categories } from "./collections/Categories";
+import { Media } from "./collections/Media";
+import { Orders } from "./collections/Orders";
+import { Products } from "./collections/Products";
+import { Tags } from "./collections/Tags";
+import { Tenants } from "./collections/Tenants";
+import { Users } from "./collections/Users";
 
-dotenv.config({ path: '.env' });
+dotenv.config({ path: ".env" });
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
 export default buildConfig({
-	admin: {
-		user: Users.slug,
-		importMap: {
-			baseDir: path.resolve(dirname),
-		},
-	},
-	collections: [Users, Media, Categories, Products, Tags, Tenants],
-	editor: lexicalEditor(),
-	secret: process.env.PAYLOAD_SECRET || '',
-	typescript: {
-		outputFile: path.resolve(dirname, 'payload-types.ts'),
-	},
-	db: mongooseAdapter({
-		url: process.env.DATABASE_URI || '',
-	}),
-	sharp,
-	plugins: [
-		payloadCloudPlugin(),
-		multiTenantPlugin<Config>({
-			collections: {
-				products: {},
-			},
-			tenantsArrayField: {
-				includeDefaultField: false,
-			},
-			userHasAccessToAllTenants: (user) =>
-				Boolean(user?.roles?.includes('super-admin')),
-		}),
-	],
+  admin: {
+    user: Users.slug,
+    importMap: {
+      baseDir: path.resolve(dirname),
+    },
+  },
+  collections: [Users, Media, Categories, Products, Tags, Tenants, Orders],
+  editor: lexicalEditor(),
+  secret: process.env.PAYLOAD_SECRET || "",
+  typescript: {
+    outputFile: path.resolve(dirname, "payload-types.ts"),
+  },
+  db: mongooseAdapter({
+    url: process.env.DATABASE_URI || "",
+  }),
+  sharp,
+  plugins: [
+    payloadCloudPlugin(),
+    multiTenantPlugin<Config>({
+      collections: {
+        products: {},
+      },
+      tenantsArrayField: {
+        includeDefaultField: false,
+      },
+      userHasAccessToAllTenants: (user) =>
+        Boolean(user?.roles?.includes("super-admin")),
+    }),
+  ],
 });

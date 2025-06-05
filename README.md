@@ -1,7 +1,12 @@
 Developer @Aldiyes
 
-# 19 Checkout Page
+# 20 Stripe Integration
 
-- Implement Checkout page
-- Implement Checkout layout
-- Implement Checkout procedures
+- Create Stripe project
+
+- Add Stripe SDK
+
+- Create "Orders" Collection
+
+- Implement webhook route
+  - Create "Order" Associated with "User"
