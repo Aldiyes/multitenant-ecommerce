@@ -25,7 +25,7 @@ export const CheckoutView = ({ tenantSlug }: Props) => {
   const [states, setStates] = useCheckoutStates();
   const trpc = useTRPC();
 
-  const { productIds, removeProductAction, clearCart } = useCart(tenantSlug);
+  const { productIds, removeProduct, clearCart } = useCart(tenantSlug);
 
   const { data, error, isLoading } = useQuery(
     trpc.checkout.getProducts.queryOptions({
@@ -108,7 +108,7 @@ export const CheckoutView = ({ tenantSlug }: Props) => {
                 tenantUrl={generateTenantURL(product.tenant.slug)}
                 isLast={index === data?.docs.length - 1}
                 price={product.price}
-                onRemoveAction={() => removeProductAction(product.id)}
+                onRemoveAction={() => removeProduct(product.id)}
               />
             ))}
           </div>

@@ -1,12 +1,16 @@
 Developer @Aldiyes
 
-# 20 Stripe Integration
+# 21 Library
 
-- Create Stripe project
+- Explain Product <=> Order relation
 
-- Add Stripe SDK
+- Improve "use-cart" hook
 
-- Create "Orders" Collection
+- Change state on "product-view.tsx"
 
-- Implement webhook route
-  - Create "Order" Associated with "User"
+  - Create proper selectors
+  - Add useShallow
+
+- Create library page UI
+
+- Create library procedures
