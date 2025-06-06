@@ -1,16 +1,15 @@
 Developer @Aldiyes
 
-# 21 Library
+# 22 Reviews
 
-- Explain Product <=> Order relation
+- Fix checkout success redirect
 
-- Improve "use-cart" hook
+- Create "getOne" library procedure
 
-- Change state on "product-view.tsx"
+- Create library/[productId] UI
 
-  - Create proper selectors
-  - Add useShallow
+- Create "Reviews" collection
 
-- Create library page UI
+- Create review procedures
 
-- Create library procedures
+- Create review form UI
