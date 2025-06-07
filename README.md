@@ -1,14 +1,16 @@
 Developer @Aldiyes
 
-# 23 Aggregating Reviews
+# 24 Access Control
 
-- Add reviews data to procedures
+- Restrict CMS access
 
-  - Products procedures
-  - Library procedures
+  - Users
+  - Categories
+  - Products
+  - Tags
+  - Tenants
+  - Orders
+  - Reviews
+  - Media
 
-- Populate components with reviews data
-
-  - "ProductList" (products module)
-  - "ProductsView" (products module)
-  - "ProductList" (library module)
+- Restrict purchased content
