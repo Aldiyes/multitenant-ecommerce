@@ -9,6 +9,7 @@ import { payloadCloudPlugin } from "@payloadcms/payload-cloud";
 import { multiTenantPlugin } from "@payloadcms/plugin-multi-tenant";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 
+import { isSuperAdmin } from "./lib/access";
 import { Config } from "./payload-types";
 
 import { Categories } from "./collections/Categories";
@@ -60,8 +61,7 @@ export default buildConfig({
       tenantsArrayField: {
         includeDefaultField: false,
       },
-      userHasAccessToAllTenants: (user) =>
-        Boolean(user?.roles?.includes("super-admin")),
+      userHasAccessToAllTenants: (user) => isSuperAdmin(user),
     }),
   ],
 });
