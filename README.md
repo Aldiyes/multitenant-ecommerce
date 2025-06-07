@@ -1,15 +1,14 @@
 Developer @Aldiyes
 
-# 22 Reviews
+# 23 Aggregating Reviews
 
-- Fix checkout success redirect
+- Add reviews data to procedures
 
-- Create "getOne" library procedure
+  - Products procedures
+  - Library procedures
 
-- Create library/[productId] UI
+- Populate components with reviews data
 
-- Create "Reviews" collection
-
-- Create review procedures
-
-- Create review form UI
+  - "ProductList" (products module)
+  - "ProductsView" (products module)
+  - "ProductList" (library module)

@@ -63,7 +63,6 @@ export const CheckoutView = ({ tenantSlug }: Props) => {
         cancle: false,
       });
       clearCart();
-      // TODO: invalidate library
       queryClient.invalidateQueries(trpc.library.getMany.infiniteQueryFilter());
       router.push("/library");
     }
