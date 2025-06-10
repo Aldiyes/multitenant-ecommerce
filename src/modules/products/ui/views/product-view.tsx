@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Fragment, useState } from "react";
 import { toast } from "sonner";
 
-import { CheckIcon, LinkIcon, LoaderIcon, StarIcon } from "lucide-react";
+import { CheckIcon, LinkIcon, Loader2Icon, StarIcon } from "lucide-react";
 
 import { useTRPC } from "@/trpc/client";
 import { useSuspenseQuery } from "@tanstack/react-query";
@@ -26,7 +26,7 @@ const CartButton = dynamic(
     ssr: false,
     loading: () => (
       <Button className="flex-1 bg-pink-400" disabled>
-        <LoaderIcon className="size-5 animate-spin" />
+        <Loader2Icon className="size-5 animate-spin" />
       </Button>
     ),
   },

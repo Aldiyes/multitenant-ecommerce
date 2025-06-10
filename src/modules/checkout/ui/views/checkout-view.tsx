@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { toast } from "sonner";
 
-import { InboxIcon, LoaderIcon } from "lucide-react";
+import { InboxIcon, Loader2Icon } from "lucide-react";
 
 import { useTRPC } from "@/trpc/client";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
@@ -85,7 +85,7 @@ export const CheckoutView = ({ tenantSlug }: Props) => {
   if (isLoading) {
     <div className="px-4 pt-4 lg:px-12 lg:pt-16">
       <div className="flex w-full flex-col items-center justify-center gap-y-4 rounded-lg border border-dashed border-black bg-white p-8">
-        <LoaderIcon className="text-muted-foreground animate-spin" />
+        <Loader2Icon className="text-muted-foreground animate-spin" />
       </div>
       ;
     </div>;
