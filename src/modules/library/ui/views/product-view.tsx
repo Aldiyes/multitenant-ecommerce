@@ -1,12 +1,15 @@
 "use client";
 
+import { RichText } from "@payloadcms/richtext-lexical/react";
 import Link from "next/link";
+import { Suspense } from "react";
 
 import { ArrowLeftIcon } from "lucide-react";
 
 import { useTRPC } from "@/trpc/client";
 import { useSuspenseQuery } from "@tanstack/react-query";
 
+import { ReviewFormSkeleton } from "@/modules/library/ui/components/review-form";
 import { ReviewSidebar } from "@/modules/library/ui/components/review-sidebar";
 
 type Props = {
@@ -38,13 +41,15 @@ export const ProductView = ({ productId }: Props) => {
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-7 lg:gap-16">
           <div className="lg:col-span-2">
             <div className="gap-4 rounded-md border bg-white p-4">
-              <ReviewSidebar productId={productId} />
+              <Suspense fallback={<ReviewFormSkeleton />}>
+                <ReviewSidebar productId={productId} />
+              </Suspense>
             </div>
           </div>
 
           <div className="lg:col-span-5">
             {data.content ? (
-              <p>{data.content}</p>
+              <RichText data={data.content} />
             ) : (
               <p className="text-muted-foreground font-medium italic">
                 No special content
