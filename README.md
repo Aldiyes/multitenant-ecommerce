@@ -1,13 +1,16 @@
 Developer @Aldiyes
 
-# 25 Stripe Connect
+# 26 General Improvements
 
-- Setup Stripe connect in dashboard
+- Allow tenants to "archive" products
 
-- Create "verify" procedure to allow tenants to verify
+  - Variant of a "soft delete"
+  - Preserves orders for customers
 
-- Modify "register" procedure to assign "accountId" to tenant
+- Allow tenants to hide their products from marketplace
 
-- Add button to verify from CMS
+  - Only show them on their store
 
-- Modify "purchase" procedure to take fee %
+- Add rich text element to "content" and "description"
+
+- Add missing Suspense wrappers

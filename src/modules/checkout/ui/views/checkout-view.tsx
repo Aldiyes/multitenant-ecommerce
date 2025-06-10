@@ -87,7 +87,6 @@ export const CheckoutView = ({ tenantSlug }: Props) => {
       <div className="flex w-full flex-col items-center justify-center gap-y-4 rounded-lg border border-dashed border-black bg-white p-8">
         <Loader2Icon className="text-muted-foreground animate-spin" />
       </div>
-      ;
     </div>;
   }
 
