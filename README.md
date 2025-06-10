@@ -1,16 +1,13 @@
 Developer @Aldiyes
 
-# 24 Access Control
+# 25 Stripe Connect
 
-- Restrict CMS access
+- Setup Stripe connect in dashboard
 
-  - Users
-  - Categories
-  - Products
-  - Tags
-  - Tenants
-  - Orders
-  - Reviews
-  - Media
+- Create "verify" procedure to allow tenants to verify
 
-- Restrict purchased content
+- Modify "register" procedure to assign "accountId" to tenant
+
+- Add button to verify from CMS
+
+- Modify "purchase" procedure to take fee %
